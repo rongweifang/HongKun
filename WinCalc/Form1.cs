@@ -53,7 +53,7 @@ namespace WinCalc
             // OA.Calorie = (float)dr["Calorie"];
             TB_Coal.Text = OA.GetCoalTotal().ToString();
             TB_Water.Text= OA.GetWaterGL().ToString();
-            TB_Ele.Text= OA.GetEle().ToString();
+            TB_Ele.Text= OA.GetEleGL().ToString();
             TB_Alkali.Text= OA.GetAlkali().ToString();
             
 

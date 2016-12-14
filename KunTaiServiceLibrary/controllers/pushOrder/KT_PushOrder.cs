@@ -295,7 +295,7 @@ DELETE KT_RUNCOMMAND WHERE PUSHID IN ({0})";
 
             Model.Command_Coal = OA.GetCoalTotal();
             Model.Command_Water = OA.GetWaterGL();
-            Model.Command_Ele = OA.GetEle();
+            Model.Command_Ele = OA.GetEleGL();
             Model.Command_Alkali = OA.GetAlkali();
             Model.Command_Salt = Math.Round(OA.GetSalt() * 45 / 50, 2);
             Model.Command_Diesel = KT_PushOrder_Arithmetic.GetCommand_Diesel(instructTime);
@@ -491,7 +491,7 @@ DELETE KT_RUNCOMMAND WHERE PUSHID IN ({0})";
             sheet.Cells[3, 5].SetStyle(cellStyle);
             //指令耗电
             sheet.Cells.Merge(3, 6, 1, 1);
-            sheet.Cells[3, 6].PutValue(OA.GetEle());
+            sheet.Cells[3, 6].PutValue(OA.GetEleGL());
             sheet.Cells[3, 6].SetStyle(cellStyle);
             //耗盐
             sheet.Cells.Merge(3, 7, 1, 1);
@@ -549,7 +549,7 @@ DELETE KT_RUNCOMMAND WHERE PUSHID IN ({0})";
             sheet.Cells[4, 5].SetStyle(cellStyle);
 
             sheet.Cells.Merge(4, 6, 1, 1);
-            sheet.Cells[4, 6].PutValue(Math.Round(SectionRatio1 * OA.GetEle(), 2));
+            sheet.Cells[4, 6].PutValue(Math.Round(SectionRatio1 * OA.GetEleGL(), 2));
             sheet.Cells[4, 6].SetStyle(cellStyle);
 
             sheet.Cells.Merge(4, 7, 1, 1);
@@ -594,7 +594,7 @@ DELETE KT_RUNCOMMAND WHERE PUSHID IN ({0})";
             sheet.Cells[5, 5].SetStyle(cellStyle);
 
             sheet.Cells.Merge(5, 6, 1, 1);
-            sheet.Cells[5, 6].PutValue(Math.Round(SectionRatio2 * OA.GetEle(), 2));
+            sheet.Cells[5, 6].PutValue(Math.Round(SectionRatio2 * OA.GetEleGL(), 2));
             sheet.Cells[5, 6].SetStyle(cellStyle);
 
             sheet.Cells.Merge(5, 7, 1, 1);
@@ -639,7 +639,7 @@ DELETE KT_RUNCOMMAND WHERE PUSHID IN ({0})";
             sheet.Cells[6, 5].SetStyle(cellStyle);
 
             sheet.Cells.Merge(6, 6, 1, 1);
-            sheet.Cells[6, 6].PutValue(Math.Round(OA.GetEle(), 2) - Math.Round(SectionRatio1 * OA.GetEle(), 2) - Math.Round(SectionRatio2 * OA.GetEle(), 2) - Math.Round(SectionRatio4 * OA.GetEle(), 2));
+            sheet.Cells[6, 6].PutValue(Math.Round(OA.GetEleGL(), 2) - Math.Round(SectionRatio1 * OA.GetEleGL(), 2) - Math.Round(SectionRatio2 * OA.GetEleGL(), 2) - Math.Round(SectionRatio4 * OA.GetEleGL(), 2));
             sheet.Cells[6, 6].SetStyle(cellStyle);
 
             sheet.Cells.Merge(6, 7, 1, 1);
@@ -684,7 +684,7 @@ DELETE KT_RUNCOMMAND WHERE PUSHID IN ({0})";
             sheet.Cells[7, 5].SetStyle(cellStyle);
 
             sheet.Cells.Merge(7, 6, 1, 1);
-            sheet.Cells[7, 6].PutValue(Math.Round(SectionRatio4 * OA.GetEle(), 2));
+            sheet.Cells[7, 6].PutValue(Math.Round(SectionRatio4 * OA.GetEleGL(), 2));
             sheet.Cells[7, 6].SetStyle(cellStyle);
 
             sheet.Cells.Merge(7, 7, 1, 1);
@@ -735,7 +735,7 @@ DELETE KT_RUNCOMMAND WHERE PUSHID IN ({0})";
             sheet.Cells[8, 5].SetStyle(cellStyle);
             //指令耗电
             sheet.Cells.Merge(8, 6, 1, 1);
-            sheet.Cells[8, 6].PutValue(Math.Round(OA.GetEle(), 2));
+            sheet.Cells[8, 6].PutValue(Math.Round(OA.GetEleGL(), 2));
             sheet.Cells[8, 6].SetStyle(cellStyle);
             //耗盐
             sheet.Cells.Merge(8, 7, 1, 1);

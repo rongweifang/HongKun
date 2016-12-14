@@ -261,7 +261,7 @@ namespace KunTaiServiceLibrary.controllers.pushOrder
         //耗碱量
         public decimal GetAlkali()
         {
-            return Math.Round(GetCoalTotal() * _Scontent  / 0.19M,2);
+            return Math.Round(GetCoalTotal() * _Scontent * 2.5m / 0.95m * 0.2m, 2);
         }
         //耗盐量
         public decimal GetSalt()
@@ -296,12 +296,15 @@ namespace KunTaiServiceLibrary.controllers.pushOrder
         //锅炉耗电量
         public decimal GetGuoLuEle()
         {
-            return Math.Round(GetWaterTotal() / (_CYCLEFLOW * 0.002m) * (_Power * _Efficiency+ _PatchPower * _PatchEfficiency), 2);
+            //补水量GetWater2()
+            //补水时间=GetWater2()/补水泵流量
+
+            return Math.Round(GetWaterTotal() / (_CYCLEFLOW * 0.002m) * _Power * _Efficiency+ GetWaterTotal() * _PatchPower * _PatchEfficiency / _PathFlow, 2);
         }
         //换热站耗电量
         public decimal GetStationEle()
         {
-            return Math.Round(GetStationRunDate() * (_Power* _Efficiency+_PatchPower*_PatchEfficiency), 2);
+            return Math.Round(GetStationRunDate() * _Power * _Efficiency + GetWater2() / _PathFlow * _PatchPower * _PatchEfficiency, 2);
         }
     }
 }
